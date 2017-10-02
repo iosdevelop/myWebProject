@@ -1,9 +1,9 @@
 							<!-- Footer -->
 							<section id="footer" class="special">
 								<ul class="icons">
-									<li><a href="index.html">Home</a></li>
-									<li><a href="details.html">Details</a></li>
-									<li><a href="registration.html">Registration</a></li>
+									<li><a href="index.php">Home</a></li>
+									<li><a href="details.php">Details</a></li>
+									<li><a href="registration.php">Registration</a></li>
 								</ul>
 								<p class="copyright">&copy; SNHU-a-Palooza</p>
 							</section>
