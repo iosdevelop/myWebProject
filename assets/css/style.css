@@ -1,0 +1,16 @@
+.event-details{
+	display: block;
+	float: left;
+	width: 40%;
+}
+
+.google-calendar{
+	display: block;
+	margin-bottom: 46px;
+
+}
+
+.google-calendar iframe{
+	width: 449px;
+	height: 618px;
+}
