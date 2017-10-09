@@ -7,7 +7,7 @@
 									</div>
 								</header>
 								
-								<p>SNHU is hosting a Concert series in Woodstock, NY.  Use the calendar to see the next available concert dates and location.  Use this website to get details and register for each event.</p>
+								<p>SNHU is hosting a Concert series in Woodstock, NY.  Use the calendar to see the next available concert dates and location.&nbsp;&nbsp;Use this website to get details and register for each event.</p>
 								<!-- Event Details -->
 							<div class="event-details">
 								<img src="images/when.jpg" alt="When Image"> <p>First Friday of every month.</p>
@@ -19,7 +19,7 @@
 								<iframe src="GoogleCalendarWidget/calendar.html"></iframe>
 							</div>
 								<footer>
-									
+									<p>After registration print tickets.&nbsp;&nbsp;Concert staff will check-in attendants at park entrance with tickets.</p>
 								</footer>
 							</article>
 						

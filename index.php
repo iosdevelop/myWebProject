@@ -8,7 +8,7 @@
 									</div>
 								</header>
 								<a aria-label="Featurd Image Advertising the Free Concert" href="#" class="image featured"><img src="images/Pic01Main.jpg" alt="SNHU-a-Palooza the Concert" /></a>
-								<p>SNHU is hosting a Concert series in Woodstock, NY.  Use the calendar to see the next available concert dates and location.  Use this website to get details and register for each event.</p>
+								<p>SNHU is hosting a Concert series in Woodstock, NY.  Use the calendar to see the next available concert dates and location.&nbsp;&nbsp;Use this website to get details and register for each event.</p>
 								<footer>
 									<ul class="actions">
 										<li><a aria-label="continue reading link" href="details.php" class="button big">Continue Reading</a></li>
