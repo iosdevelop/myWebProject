@@ -17,6 +17,7 @@
 	<div class="google-calendar">
 	<iframe src="GoogleCalendarWidget/calendar.html"></iframe>
 	</div>
+	<br>
 	<p>After registering, you will have the option to print tickets for the event.&nbsp;&nbsp;Concert staff will check attendant's ticket at park entrance.</p>
 	<footer>		
 		<a aria-label="register for event" href="registration.php" class="button big">Register Now For Concert</a>
