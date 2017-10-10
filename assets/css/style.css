@@ -15,3 +15,68 @@
 	height: 618px;
 }
 
+footer {
+    margin-bottom: 13px;
+}
+
+@media screen and (max-width: 736px){
+  article.mini-post{
+  	width: 100%;
+  }
+  .event-details{
+  	width: 100%;
+  }
+    .event-details img{
+      width: 100%;  
+    }
+}
+
+@media screen and (max-width: 500px){
+  article.mini-post{
+  	width: 100%;
+  }
+  .event-details{
+  	width: 100%;
+  }
+    .event-details img{
+      widows: 100%;  
+    }
+  .google-calendar iframe{
+	width: 303px;
+	height: 618px;
+    }
+}
+
+@media screen and (max-width: 375px){
+	.event-details{
+		width: 100%;
+	}
+    .event-details img{
+      width: 100%;  
+    }
+	.google-calendar iframe{
+	width: 300px;
+	height: 618px;
+    }
+
+	article.mini-post{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.event-details{
+		width: 100%;
+	}
+    .event-details img{
+      width: 100%;  
+    }
+	.google-calendar iframe{
+	width: 220px;
+	height: 618px;
+    }
+
+	article.mini-post{
+		width: 100%;
+	}
+}
