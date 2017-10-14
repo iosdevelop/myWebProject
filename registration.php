@@ -1,32 +1,55 @@
-<?php include_once "header.php";?>
-<?php
-$servername = "localhost";
-$username = "codio";
-$password = "woodstock";
+<?php include_once "header.php";
+			include_once "config.php";?>
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-?>
 						<!-- Post -->
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a aria-label="The home page link" href="index.php">SNHU-a-palooza The Concert</a></h2>
-										<p>Register and print your tickets today.</p>
+										<h2><a aria-label="The home page link" href="index.php">Registration Form</a></h2>
 									</div>
 								</header>
-								<a aria-label="Featurd Image Advertising the Free Concert" href="#" class="image featured"><img src="images/Pic01Main.jpg" alt="SNHU-a-Palooza the Concert" /></a>
-								<p>SNHU is hosting a Concert series in Woodstock, NY.  Use the calendar to see the next available concert dates and location.&nbsp;&nbsp;Use this website to get details and register for each event.</p>
-								<footer>
-									<ul class="actions">
-										<li><a aria-label="continue reading link" href="details.php" class="button big">Continue Reading</a></li>
-									</ul>
-								</footer>
+									
+								<form class="pure-form pure-form-aligned" action="confirmation.php" method="post" accept-charset="utf-8" name="registrationForm">
+									<fieldset>
+										<div class="pure-control-group">
+											<label for="firstName">First Name: </label>
+											<input type="text" name="firstName" id="firstName" required="">
+										</div>
+										<div class="pure-control-group">
+											<label>Last Name: </label>
+											<input type="text" name="lastName" required="">
+										</div>
+										<div class="pure-control-group" required>
+											<label>Event Date: </label>
+													<?php 
+
+													//Here I am pulling all events from the events table
+													//I find this is safer to have user select valid concert date.
+														
+													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, woodstock.events.date FROM woodstock.events");												 
+													if($dateChecklist->num_rows){
+														$select= '<select name="eventId">';
+														while($event=$dateChecklist->fetch_array()){
+															$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
+														}
+													}
+												$select.='</select>';
+												echo $select; 
+													?>
+										</div>
+											
+										<div class="pure-control-group">
+											<label>Email Address</label>
+											<input type="email" name="emailAddress" required="">
+										</div>
+										<div class="pure-control-group">
+											<label>Phone Number</label>
+											<input type="tel" name="phoneNumber" value="" required="">
+										</div>
+										<br>
+										<input type="submit" name="confirmation" value="Submit Registration Form">
+									</fieldset>
+								</form>
 							</article>
 <?php include_once "footer.php"; ?>
