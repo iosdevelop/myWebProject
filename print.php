@@ -1,7 +1,6 @@
 <?php include_once "header.php";
 				include_once "config.php";
 			
-			print($_GET['eventId']);
 
 
 			if(isset($_POST['submit'])) {   
@@ -25,9 +24,9 @@
 			        // echo "<font color='green'>Data added successfully.";
 			        // echo "<br/><a href='index.php'>View Result</a>";
 			        if ($conn->query($result) === TRUE) {
-			            echo "New record created successfully";
+			            //echo "New record created successfully";
 			        } else {
-			            echo "Error: " . $result. "<br>" . $conn->error;
+			            //echo "Error: " . $result. "<br>" . $conn->error;
 			        }
 			    }
 ?>
