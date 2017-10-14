@@ -2,7 +2,7 @@
 				include_once "config.php";
 			
 			//This is our registration number
-			$registrationNumber=(RAND() * 3);
+			$registrationNumber=(RAND() * 333);
 	
 
 			$selectOption = $_POST['eventId'];
