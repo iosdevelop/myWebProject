@@ -33,7 +33,6 @@ CREATE TABLE `users` (
 -- Indexes for table `events`
 --
 
-USE woodstock;
 
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
