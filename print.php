@@ -16,7 +16,7 @@
 			        // if all the fields are filled (not empty)             
 			        //insert data to database
 			        //
-			        print('We are here');
+			        //print('We are here');
 
 			        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', '$eventId','$registrationNumber')";
 			        
