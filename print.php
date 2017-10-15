@@ -4,12 +4,12 @@
 
 
 			if(isset($_POST['submit'])) {   
-			    $firstName = $_POST['firstName'];
-			    $lastName = $_POST['lastName'];
-			    $phoneNumber = $_POST['phoneNumber'];
-			    $emailAddress = $_POST['emailAddress'];
-			    $eventId =$_GET['eventId'];
-			    $registrationNumber = $_POST['registrationNumber'];
+			    $firstName = $conn->real_escape_string($_POST['firstName']);
+			    $lastName = $conn->real_escape_string($_POST['lastName']);
+			    $phoneNumber = $conn->real_escape_string($_POST['phoneNumber']);
+			    $emailAddress = $conn->real_escape_string($_POST['emailAddress']);
+			    $eventId = $conn->real_escape_string($_GET['eventId']);
+			    $registrationNumber = $conn->real_escape_string($_POST['registrationNumber']);
 
 			    // checking empty fields
 			     
@@ -17,6 +17,7 @@
 			        //insert data to database
 			        //
 			        //print('We are here');
+			        
 
 			        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', '$eventId','$registrationNumber')";
 			        
