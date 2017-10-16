@@ -1,6 +1,6 @@
 <?php include_once "header.php";
 				include_once "config.php";
-				include_once "lib/random.php";
+				require_once __DIR__ . "/lib/random.php";
 			
 			//This is our registration number
 			
