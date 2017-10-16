@@ -5,12 +5,12 @@
 
 
 			if(isset($_POST['submit'])) {   
-			    $firstName = $_POST['firstName'];
-			    $lastName = $_POST['lastName'];
-			    $phoneNumber = $_POST['phoneNumber'];
-			    $emailAddress = $_POST['emailAddress'];
-			    $eventId =$_GET['eventId'];
-			    $registrationNumber = $_POST['registrationNumber'];
+			    $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
+			    $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
+			    $phoneNumber = mysqli_real_escape_string($conn, $_POST['phoneNumber']);
+			    $emailAddress = mysqli_real_escape_string($conn, $_POST['emailAddress']);
+			    $eventId =mysqli_real_escape_string($conn, $_GET['eventId']);
+			    $registrationNumber = mysqli_real_escape_string($conn, $_POST['registrationNumber']);
 
 			    // checking empty fields
 			     
