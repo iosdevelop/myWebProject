@@ -1,9 +1,10 @@
 <?php include_once "header.php";
 				include_once "config.php";
 			
-			//print($_GET['eventId']);
+			
 
-
+			//Here I am seeing if the user hits the submit button
+			//Then I am saving all the post data to varialbes
 			if(isset($_POST['submit'])) {   
 			    $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
 			    $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
@@ -13,11 +14,14 @@
 			    $registrationNumber = mysqli_real_escape_string($conn, $_POST['registrationNumber']);
 
 			    // checking empty fields
-			     
-			        // if all the fields are filled (not empty)             
-			        //insert data to database
-			        //
-			        //print('We are here');
+			    // 
+			    // if (empty($firstName)){
+
+			    // 	echo '<script>$(".error").innerHTML='Missing';</script>'
+
+			    }
+			    else
+			    {
 
 			        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', '$eventId','$registrationNumber')";
 			        
@@ -38,6 +42,8 @@
 			        		echo "Error: " . $result. "<br>" . $conn->error;
 			        	}
 			        }
+			    //}
+
 ?>
 
 <article class="post">
@@ -63,6 +69,7 @@
 			</h3>
 		</div>
 	</div>
+	<a class="button" href="javascript:window.print();">Print Confirmaton</a>
 </article>
 						
 <?php include_once "footer.php"; ?>

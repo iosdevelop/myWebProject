@@ -10,15 +10,15 @@
 									</div>
 								</header>
 									
-								<form class="pure-form pure-form-aligned" action="confirmation.php" method="post" accept-charset="utf-8" name="registrationForm">
+								<form class="pure-form pure-form-aligned" action="confirmation.php" onsubmit="return validateForm()" method="post" accept-charset="utf-8" name="registrationForm">
 									<fieldset>
 										<div class="pure-control-group">
-											<label for="firstName">First Name: </label>
-											<input type="text" name="firstName" id="firstName" required="">
+											<label for="firstName">First Name: </label><span class="error"></span>
+											<input type="text" name="firstName" id="firstName" pattern="[A-Za-z]+" title="First Name" required>
 										</div>
 										<div class="pure-control-group">
 											<label>Last Name: </label>
-											<input type="text" name="lastName" required="">
+											<input type="text" name="lastName" pattern="[A-Za-z]+" title="Last Name" required="">
 										</div>
 										<div class="pure-control-group" required>
 											<label>Event Date: </label>
@@ -41,11 +41,11 @@
 											
 										<div class="pure-control-group">
 											<label>Email Address</label>
-											<input type="email" name="emailAddress" required="">
+											<input type="email" name="emailAddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email Address" required="">
 										</div>
 										<div class="pure-control-group">
 											<label>Phone Number</label>
-											<input type="tel" name="phoneNumber" value="" required="">
+											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" title="Telephone Number" required="">
 										</div>
 										<br>
 										<input type="submit" name="confirmation" value="Submit Registration Form">
