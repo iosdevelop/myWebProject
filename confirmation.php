@@ -5,7 +5,7 @@
 			//This is our registration number
 			
 			$random = new \PHP\Random(true);
-			$registrationNumber=$random->int(1321, 10000000);
+			$registrationNumber=$random->int(0, 10000);
 	
 
 			$selectOption = $_POST['eventId'];
