@@ -1,8 +1,11 @@
 <?php include_once "header.php";
 				include_once "config.php";
+				include_once "lib/random.php";
 			
 			//This is our registration number
-			$registrationNumber=(RAND() * 333);
+			
+			$random = new \PHP\Random(true);
+			$registrationNumber=$random->int(1321, 10000000);
 	
 
 			$selectOption = $_POST['eventId'];

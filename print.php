@@ -1,15 +1,16 @@
 <?php include_once "header.php";
 				include_once "config.php";
 			
+			//print($_GET['eventId']);
 
 
 			if(isset($_POST['submit'])) {   
-			    $firstName = $conn->real_escape_string($_POST['firstName']);
-			    $lastName = $conn->real_escape_string($_POST['lastName']);
-			    $phoneNumber = $conn->real_escape_string($_POST['phoneNumber']);
-			    $emailAddress = $conn->real_escape_string($_POST['emailAddress']);
-			    $eventId = $conn->real_escape_string($_GET['eventId']);
-			    $registrationNumber = $conn->real_escape_string($_POST['registrationNumber']);
+			    $firstName = $_POST['firstName'];
+			    $lastName = $_POST['lastName'];
+			    $phoneNumber = $_POST['phoneNumber'];
+			    $emailAddress = $_POST['emailAddress'];
+			    $eventId =$_GET['eventId'];
+			    $registrationNumber = $_POST['registrationNumber'];
 
 			    // checking empty fields
 			     
@@ -17,7 +18,6 @@
 			        //insert data to database
 			        //
 			        //print('We are here');
-			        
 
 			        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', '$eventId','$registrationNumber')";
 			        
@@ -26,10 +26,18 @@
 			        // echo "<br/><a href='index.php'>View Result</a>";
 			        if ($conn->query($result) === TRUE) {
 			            //echo "New record created successfully";
-			        } else {
-			            //echo "Error: " . $result. "<br>" . $conn->error;
+			        // } else {
+			        // 	if(mysqli_errno($conn) == 1062){
+			        // 		echo "duplicate entry no need to insert into DB<br>";
+			        // 		$registrationNumber=(RAND() * 333);
+			        // 		if ($conn->query($result) === TRUE){
+			        // 			echo "New record created successfully";
+			        // 		}
+			         	}
+			        else{
+			        		echo "Error: " . $result. "<br>" . $conn->error;
+			        	}
 			        }
-			    }
 ?>
 
 <article class="post">
