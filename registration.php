@@ -45,7 +45,7 @@
 										</div>
 										<div class="pure-control-group">
 											<label>Phone Number</label>
-											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" title="Telephone Number" required="">
+											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" title="Telephone Number - 10 numeric characters only - no dash" required="">
 										</div>
 										<br>
 										<input type="submit" name="confirmation" value="Submit Registration Form">
