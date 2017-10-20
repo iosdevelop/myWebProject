@@ -1,5 +1,5 @@
 <?php include_once "header.php";
-				include_once "config.php";
+			include_once "config.php";
 			
 			
 
@@ -19,30 +19,27 @@
 
 			    // 	echo '<script>$(".error").innerHTML='Missing';</script>'
 
-			    }
-			    else
-			    {
 
-			        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', '$eventId','$registrationNumber')";
-			        
-			        //display success message
-			        // echo "<font color='green'>Data added successfully.";
-			        // echo "<br/><a href='index.php'>View Result</a>";
-			        if ($conn->query($result) === TRUE) {
-			            //echo "New record created successfully";
-			        // } else {
-			        // 	if(mysqli_errno($conn) == 1062){
-			        // 		echo "duplicate entry no need to insert into DB<br>";
-			        // 		$registrationNumber=(RAND() * 333);
-			        // 		if ($conn->query($result) === TRUE){
-			        // 			echo "New record created successfully";
-			        // 		}
-			         	}
-			        else{
-			        		echo "Error: " . $result. "<br>" . $conn->error;
-			        	}
-			        }
-			    //}
+	        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', '$eventId','$registrationNumber')";
+	        
+	        //display success message
+	        // echo "<font color='green'>Data added successfully.";
+	        // echo "<br/><a href='index.php'>View Result</a>";
+	        if ($conn->query($result) === TRUE) {
+	            //echo "New record created successfully";
+	        // } else {
+	        // 	if(mysqli_errno($conn) == 1062){
+	        // 		echo "duplicate entry no need to insert into DB<br>";
+	        // 		$registrationNumber=(RAND() * 333);
+	        // 		if ($conn->query($result) === TRUE){
+	        // 			echo "New record created successfully";
+	        // 		}
+	        }
+	        else{
+	        		echo "Error: " . $result. "<br>" . $conn->error;
+	        	}
+	    }
+	    
 
 ?>
 
