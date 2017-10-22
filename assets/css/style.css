@@ -22,7 +22,20 @@ input:valid{
     border:solid 2px #18E109;
     background-color:#fff;
 }
+input,select{
+  display: inline-block !important;
+  width: 50% !important;
+  margin-bottom: 1em !important;
+}
 
+input[type="tel"] {
+    width: 117px !important;
+}
+label {
+  display: inline-block !important;
+  width: 113px !important;
+  float: left !important;
+}
 footer {
     margin-bottom: 13px;
 }
@@ -36,6 +49,16 @@ footer {
   }
     .event-details img{
       width: 100%;  
+    }
+
+    input, select{
+      width: 100% !important;
+    }
+
+
+
+    label{
+      display: none !important;
     }
 }
 
@@ -53,6 +76,7 @@ footer {
 	width: 303px;
 	height: 618px;
     }
+
 }
 
 @media screen and (max-width: 375px){

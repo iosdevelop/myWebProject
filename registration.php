@@ -14,11 +14,11 @@
 									<fieldset>
 										<div class="pure-control-group">
 											<label for="firstName">First Name: </label><span class="error"></span>
-											<input type="text" name="firstName" id="firstName" pattern="[A-Za-z]+" title="First Name" maxlength="30" required>
+											<input type="text" name="firstName" id="firstName" pattern="[A-Za-z]+" placeholder="First Name" maxlength="30" required>
 										</div>
 										<div class="pure-control-group">
 											<label>Last Name: </label>
-											<input type="text" name="lastName" pattern="[A-Za-z]+" title="Last Name" maxlength="30" required="">
+											<input type="text" name="lastName" pattern="[A-Za-z]+" placeholder="Last Name" maxlength="30" required="">
 										</div>
 										<div class="pure-control-group" required>
 											<label>Event Date: </label>
@@ -29,7 +29,7 @@
 														
 													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, woodstock.events.date FROM woodstock.events");												 
 													if($dateChecklist->num_rows){
-														$select= '<select name="eventId">';
+														$select= '<select name="eventId"><option selected disabled>Choose an event date</option>';
 														while($event=$dateChecklist->fetch_array()){
 															$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
 														}
@@ -40,15 +40,16 @@
 										</div>
 											
 										<div class="pure-control-group">
-											<label>Email Address</label>
-											<input type="email" name="emailAddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Email Address" maxlength="40" required="">
+											<label>Email Address:</label>
+											<input type="email" name="emailAddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" maxlength="40" required="">
 										</div>
 										<div class="pure-control-group">
-											<label>Phone Number</label>
-											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" title="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
+											<label>Phone Number:</label>
+											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" placeholder="Telephone" title="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
 										</div>
 										<br>
-										<input type="submit" name="confirmation" value="Submit Registration Form">
+										<!-- <input type="submit" name="confirmation" value="Submit Registration Form"> -->
+										<a href="javascript:$('form').submit();" class="big button">Submit</a>
 									</fieldset>
 								</form>
 							</article>
