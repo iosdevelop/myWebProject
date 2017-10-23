@@ -69,7 +69,6 @@
 			</h3>
 		</div>
 	</div>
-	<br>
 	<a class="button" href="javascript:window.print();">Print Confirmaton</a>
 </article>
 						

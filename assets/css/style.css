@@ -166,3 +166,27 @@ footer {
       margin-bottom: 19px;
   }
 }
+
+@media print{
+  header nav, footer, #footer {
+  display: none;
+  }
+  @page {
+  margin: 0.5cm;
+  }
+  @page :left {
+  margin: 0.5cm;
+  }
+
+  @page :right {
+  margin: 0.8cm;
+  }
+
+  a.button{
+    display: none;
+  }
+
+  img{
+    width: 300px;
+  }
+}
