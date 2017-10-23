@@ -15,6 +15,12 @@
 	height: 618px;
 }
 
+img.free {
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
 input:invalid{
     border:solid 2px #F5192F;
 }
@@ -29,12 +35,20 @@ input,select{
 }
 
 input[type="tel"] {
-    width: 117px !important;
+    width: 149px !important;
 }
+
+input#submit {
+    width: 278px !important;
+    margin-left: 170px;
+}
+
 label {
   display: inline-block !important;
-  width: 113px !important;
+  width: 161px !important;
   float: left !important;
+  text-align: right !important;
+  margin-right: 11px !important;
 }
 footer {
     margin-bottom: 13px;
@@ -55,7 +69,11 @@ footer {
       width: 100% !important;
     }
 
-
+    input#submit {
+        width: 100%;
+        margin-left: 0;
+        
+    }
 
     label{
       display: none !important;
@@ -76,6 +94,18 @@ footer {
 	width: 303px;
 	height: 618px;
     }
+  input#submit {
+      width: 100%;
+      margin-left: 0;
+      
+  }
+  img.free {
+      float: right;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 19px;
+  }
 
 }
 
@@ -94,6 +124,18 @@ footer {
 	article.mini-post{
 		width: 100%;
 	}
+  input#submit {
+      width: 100%;
+      margin-left: 0;
+      
+  }
+  img.free {
+      float: right;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 19px;
+  }
 }
 
 @media screen and (max-width: 320px){
@@ -111,4 +153,16 @@ footer {
 	article.mini-post{
 		width: 100%;
 	}
+  input#submit {
+      width: 100%;
+      margin-left: 0;
+      
+  }
+  img.free {
+      float: right;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 19px;
+  }
 }

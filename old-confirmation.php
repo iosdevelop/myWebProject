@@ -31,7 +31,7 @@
 								</header>
 								<form class="pure-form" action="print.php?eventId=<?php echo $selectOption?>" method="post" enctype="multipart/form-data" accept-charset="utf-8" name="confirmationForm">
 									<div class="pure-control-group">
-										<label>Registration Number: </label>
+										<label>Registration Number: </label><div class="error"></div>
 										<input type="text" name="registrationNumber" value="<?php echo $registrationNumber;?>" readonly>
 									</div>
 									<div class="pure-control-group">
@@ -52,11 +52,11 @@
 											
 										</div>
 										<div class="pure-control-group">
-											<label>Email Address:</label>
+											<label>Email Address</label>
 											<input type="email" name="emailAddress" value="<?php echo $_POST['emailAddress'];?>">
 										</div>
 										<div class="pure-control-group">
-											<label>Phone Number:</label>
+											<label>Phone Number</label>
 											<input type="tel" name="phoneNumber" value="<?php echo $_POST['phoneNumber'];?>" >
 										</div>
 										<br>

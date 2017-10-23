@@ -52,9 +52,12 @@
 	<div class="ticket">
 		<div class="reigstrationNumber">
 			<h2>Registration Number: <?php echo $registrationNumber; ?></h2>
+			<img class="free" src="images/free.jpg" alt="Free Concert">
 		</div>
 		<div class="userInfo">
-			<h3><?php echo $firstName.' '.$lastName; ?></h3>
+			<h3><?php echo 'Name: &nbsp;'.$firstName.' '.$lastName; ?></h3>
+			<h4><?php echo 'Telephone: &nbsp;'.$phoneNumber; ?></h4>
+			<h5><?php echo 'Email Address: &nbsp;'.$emailAddress	; ?></h5>
 			<h3>Date:  <?php 
 							 
 							 $selectValueQuery = "SELECT woodstock.events.date FROM woodstock.events WHERE woodstock.events.id = $eventId";
@@ -66,6 +69,7 @@
 			</h3>
 		</div>
 	</div>
+	<br>
 	<a class="button" href="javascript:window.print();">Print Confirmaton</a>
 </article>
 						

@@ -29,7 +29,7 @@
 														
 													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, woodstock.events.date FROM woodstock.events");												 
 													if($dateChecklist->num_rows){
-														$select= '<select name="eventId"><option selected disabled>Choose an event date</option>';
+														$select= '<select name="eventId">';
 														while($event=$dateChecklist->fetch_array()){
 															$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
 														}
@@ -45,11 +45,10 @@
 										</div>
 										<div class="pure-control-group">
 											<label>Phone Number:</label>
-											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" placeholder="Telephone" title="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
+											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" placeholdertitle="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
 										</div>
 										<br>
-										<!-- <input type="submit" name="confirmation" value="Submit Registration Form"> -->
-										<a href="javascript:$('form').submit();" class="big button">Submit</a>
+										<input type="submit" id="submit" name="confirmation" value="Submit Registration Form">
 									</fieldset>
 								</form>
 							</article>
