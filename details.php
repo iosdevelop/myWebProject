@@ -1,4 +1,6 @@
-<?php include_once "header.php";?>
+<?php include_once "header.php";
+			include_once "config.php";
+?>
 <article class="post">
 	<header>
 		<div class="title">
@@ -16,6 +18,24 @@
 	<!-- Google Calendar -->
 	<div class="google-calendar">
 	<iframe src="GoogleCalendarWidget/calendar.html"></iframe>
+	</div>
+	<div class="backup-calendar-list box">
+		<?php 
+
+			//Here I am pulling all events from the events table
+			//I find this is safer to have user select valid concert date.
+			echo '<h2>Event Dates</h2>';
+			$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, woodstock.events.date FROM woodstock.events");												 
+			if($dateChecklist->num_rows){
+				//$select= '<select name="eventId">';
+				while($event=$dateChecklist->fetch_array()){
+					$select.='<li>'.$event['id'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</li>';
+				}
+			}
+		//$select.='</select>';
+		echo '<ul>'.$select.'</ul>'; 
+			?>
+				
 	</div>
 	<br>
 	<p>After registering, you will have the option to print tickets for the event.&nbsp;&nbsp;Concert staff will check attendant's ticket at park entrance.</p>

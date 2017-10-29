@@ -1,3 +1,6 @@
+CREATE DATABASE woodstock;
+USE woodstock;
+
 CREATE TABLE `events` (
   `id` int(10) UNSIGNED NOT NULL,
   `location` varchar(255) NOT NULL,
@@ -21,7 +24,7 @@ CREATE TABLE `users` (
   `lastName` varchar(255) DEFAULT NULL,
   `emailAddress` varchar(255) DEFAULT NULL,
   `phoneNumber` varchar(255) DEFAULT NULL,
-  `eventID` int(10) NOT NULL,
+  `eventID` int(10) UNSIGNED NOT NULL,
   `registrationNumber` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -46,7 +49,7 @@ ALTER TABLE `users`
 
 --
 -- AUTO_INCREMENT for dumped tables
---
+ALTER TABLE `users` ADD CONSTRAINT `fkevents` FOREIGN KEY (`eventID`) REFERENCES `events`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- AUTO_INCREMENT for table `events`

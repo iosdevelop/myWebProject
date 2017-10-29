@@ -3,7 +3,9 @@
 	float: left;
 	width: 50%;
 }
-
+.backup-calendar-list{
+  display: none;
+}
 .google-calendar{
 	display: block;
 	margin-bottom: 46px;
@@ -14,6 +16,18 @@
 	width: 508px;
 	height: 618px;
 }
+span.one{
+  color:blue;
+}
+span.two{
+  display: none;
+  color:blue;
+}
+span.three{
+  display: none;
+  color: blue;
+}
+
 
 img.free {
     float: right;
@@ -91,8 +105,8 @@ footer {
       widows: 100%;  
     }
   .google-calendar iframe{
-	width: 303px;
-	height: 618px;
+  	width: 434px;
+  	height: 618px;
     }
   input#submit {
       width: 100%;
@@ -115,11 +129,11 @@ footer {
 	}
     .event-details img{
       width: 100%;  
-    }
+  }
 	.google-calendar iframe{
-	width: 300px;
-	height: 618px;
-    }
+  	width: 300px;
+  	height: 618px;
+  }
 
 	article.mini-post{
 		width: 100%;
@@ -127,7 +141,6 @@ footer {
   input#submit {
       width: 100%;
       margin-left: 0;
-      
   }
   img.free {
       float: right;
@@ -146,9 +159,10 @@ footer {
       width: 100%;  
     }
 	.google-calendar iframe{
-	width: 220px;
-	height: 618px;
-    }
+  	/*width: 220px;
+  	height: 618px;*/
+    display: none;
+  }
 
 	article.mini-post{
 		width: 100%;
@@ -165,10 +179,14 @@ footer {
       width: 100%;
       margin-bottom: 19px;
   }
+
+  .backup-calendar-list{
+    display: inline-block!important;
+  }
 }
 
 @media print{
-  header nav, footer, #footer {
+  header nav, footer, #footer, #header {
   display: none;
   }
   @page {

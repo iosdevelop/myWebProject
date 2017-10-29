@@ -48,7 +48,7 @@
 											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" placeholdertitle="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
 										</div>
 										<br>
-										<input type="submit" id="submit" name="confirmation" value="Submit Registration Form">
+										<input type="submit" id="submit" name="confirmation" value="Next">
 									</fieldset>
 								</form>
 							</article>
