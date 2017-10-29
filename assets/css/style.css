@@ -6,6 +6,10 @@
 .backup-calendar-list{
   display: none;
 }
+
+.backup-calendar-list li{
+  list-style: none;
+}
 .google-calendar{
 	display: block;
 	margin-bottom: 46px;
@@ -186,7 +190,7 @@ footer {
 }
 
 @media print{
-  header nav, footer, #footer, #header {
+  header nav, header, footer, #footer, #header {
   display: none;
   }
   @page {

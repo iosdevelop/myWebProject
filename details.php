@@ -17,7 +17,7 @@
 	</div>
 	<!-- Google Calendar -->
 	<div class="google-calendar">
-	<iframe src="GoogleCalendarWidget/calendar.html"></iframe>
+	<iframe title="Google Calendar of Events" src="GoogleCalendarWidget/calendar.html"></iframe>
 	</div>
 	<div class="backup-calendar-list box">
 		<?php 
@@ -29,7 +29,7 @@
 			if($dateChecklist->num_rows){
 				//$select= '<select name="eventId">';
 				while($event=$dateChecklist->fetch_array()){
-					$select.='<li>'.$event['id'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</li>';
+					$select.='<li><a href="registration.php?eventID='.$event['id'].'">'.$event['id'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</a></li>';
 				}
 			}
 		//$select.='</select>';

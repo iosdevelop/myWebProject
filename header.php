@@ -18,7 +18,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a aria-label="Southern New Hampshire University Music Festival" href="#">SNHU Music Festival</a></h1>
+						<h1><a aria-label="Southern New Hampshire University Music Festival" href="index.php">SNHU Music Festival</a></h1>
 						<nav class="links">
 							<ul>
 								<li><a aria-label="Home Page Link" href="index.php">Home</a></li>

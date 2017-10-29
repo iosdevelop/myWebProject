@@ -25,13 +25,20 @@
 													<?php 
 
 													//Here I am pulling all events from the events table
-													//I find this is safer to have user select valid concert date.
+													//I find this is safer to have user select valid concert dates.
 														
 													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, woodstock.events.date FROM woodstock.events");												 
 													if($dateChecklist->num_rows){
 														$select= '<select name="eventId">';
 														while($event=$dateChecklist->fetch_array()){
-															$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
+															//Checking if user selected date from details page and auto selecting
+															//inside list
+															if($event['id']===$_GET['eventID']){
+																$select.='<option value="'.$event['id'].'" selected>'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
+															}else{
+																//Display all events from database
+																$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
+															}
 														}
 													}
 												$select.='</select>';
