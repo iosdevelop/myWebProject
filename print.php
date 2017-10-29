@@ -17,7 +17,7 @@
 	        // echo "<font color='green'>Data added successfully.";
 	        // echo "<br/><a href='index.php'>View Result</a>";
 	        if ($conn->query($result) === TRUE) {
-	            echo '<h3 class="header">New record created successfully</h3>';
+	            //echo '<h3 class="header">New record created successfully</h3>';
 	        }
 	        else{
 	        		echo "Error: " . $result. "<br>" . $conn->error;
