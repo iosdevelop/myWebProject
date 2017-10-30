@@ -7,9 +7,7 @@
   display: none;
 }
 
-.backup-calendar-list li{
-  list-style: none;
-}
+
 .google-calendar{
 	display: block;
 	margin-bottom: 46px;

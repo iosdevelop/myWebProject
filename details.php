@@ -29,11 +29,11 @@
 			if($dateChecklist->num_rows){
 				//$select= '<select name="eventId">';
 				while($event=$dateChecklist->fetch_array()){
-					$select.='<li><a href="registration.php?eventID='.$event['id'].'">'.$event['id'].'&nbsp;&nbsp;&nbsp;&nbsp;'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</a></li>';
+					$select.='<li><a href="registration.php?eventID='.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</a></li>';
 				}
 			}
 		//$select.='</select>';
-		echo '<ul>'.$select.'</ul>'; 
+		echo '<ol>'.$select.'</ol>'; 
 			?>
 				
 	</div>
