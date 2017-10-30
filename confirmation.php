@@ -6,7 +6,7 @@
 			$registrationNumber=mt_rand(1, 100000000);
 			//Get the user option and display
 			$selectOption = $_POST['eventId'];
-			$selectValueQuery = "SELECT woodstock.events.date FROM woodstock.events WHERE woodstock.events.id = $selectOption";
+			$selectValueQuery = "SELECT DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events WHERE woodstock.events.id = $selectOption";
 			$selectValue =  mysqli_query($conn, $selectValueQuery );
 			$selectionCurrent = mysqli_fetch_array($selectValue, MYSQLI_ASSOC);
 ?>

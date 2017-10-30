@@ -40,7 +40,7 @@
 			<h4><?php echo 'Telephone: &nbsp;'.$phoneNumber; ?></h4>
 			<h5><?php echo 'Email Address: &nbsp;'.$emailAddress	; ?></h5>
 			<h3>Date:  <?php 
-			 $selectValueQuery = "SELECT woodstock.events.date FROM woodstock.events WHERE woodstock.events.id = $eventId";
+			 $selectValueQuery = "SELECT DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events WHERE woodstock.events.id = $eventId";
 			 $selectValue =  mysqli_query($conn, $selectValueQuery );
 			 $selectionCurrent = mysqli_fetch_array($selectValue, MYSQLI_ASSOC);
 			 echo $selectionCurrent['date'];

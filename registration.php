@@ -27,7 +27,7 @@
 													//Here I am pulling all events from the events table
 													//I find this is safer to have user select valid concert dates.
 														
-													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, woodstock.events.date FROM woodstock.events");												 
+													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events");												 
 													if($dateChecklist->num_rows){
 														$select= '<select name="eventId">';
 														while($event=$dateChecklist->fetch_array()){
