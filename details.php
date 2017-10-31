@@ -1,18 +1,9 @@
 <?php include_once "header.php";
 			include_once "config.php";
-
-			$eventCount = "SELECT eventid, count(*) FROM woodstock.users GROUP BY eventID HAVING count(*) = 5";
+			//get events that have registration at 50,000
+			$eventCount = "SELECT eventid, count(*) FROM woodstock.users GROUP BY eventID HAVING count(*) = 50000";
 			$eventSold = mysqli_query($conn, $eventCount);
 			$soldEventOut = mysqli_fetch_array($eventSold, MYSQLI_ASSOC);
-
-
-			// if($eventCount->num_rows){
-			// 	while($soldOut=$eventCount->fetch_array()){
-			// 		$select.='<li>'.$soldOut['eventid'].'SOLDOUT</li>';
-			// 	}
-			// }
-			// echo $select.'SoldOut';
-			//cho '<pre>'.var_dump($soldEventOut);
 ?>
 <article class="post">
 	<header>
@@ -41,6 +32,7 @@
 			$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events WHERE date >= NOW()");												 
 			if($dateChecklist->num_rows){
 				while($event=$dateChecklist->fetch_array()){
+					//if event is soldout strick through
 					if ($event['id']==$soldEventOut['eventid']){
 						$select.='<li class="soldOut">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].$soldOut['count(*)'].'&nbsp;SOLD OUT</li>';
 					}else{
