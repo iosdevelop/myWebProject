@@ -24,25 +24,25 @@
 		</div>
 		<div class="pure-control-group">
 			<label>First Name: </label>
-			<input type="text" name="firstName" value = "<?php echo $_POST['firstName'];?>" required>
+			<input type="text" name="firstName" pattern="[A-Za-z]+" id="firstName" value = "<?php echo $_POST['firstName'];?>" required>
 		</div>
 		<div class="pure-control-group">
 			<label>Last Name:</label>
-			<input type="text" name="lastName" value="<?php echo $_POST['lastName'];?>" required>
+			<input type="text" name="lastName" pattern="[A-Za-z]+" value="<?php echo $_POST['lastName'];?>" required>
 		</div>
 		<div class="pure-control-group">
 			<label>Event Date: </label>
 			<select name="" >
-				<option value="<?php echo $_POST['eventId'];?>"><?php echo $selectionCurrent['date'];?></option>
+				<option value="<?php echo $_POST['eventId'];?>" required><?php echo $selectionCurrent['date'];?></option>
 			</select>		
 		</div>
 		<div class="pure-control-group">
 			<label>Email Address:</label>
-			<input type="email" name="emailAddress" value="<?php echo $_POST['emailAddress'];?>">
+			<input type="email" name="emailAddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $_POST['emailAddress'];?>" required>
 		</div>
 		<div class="pure-control-group">
 			<label>Phone Number:</label>
-			<input type="tel" name="phoneNumber" value="<?php echo $_POST['phoneNumber'];?>" >
+			<input type="tel" name="phoneNumber" pattern="^\d{10}$" value="<?php echo $_POST['phoneNumber'];?>" placeholdertitle="Telephone Number - 10 numeric characters only - no dash" required>
 		</div>
 		<br>
 		<input type="submit" name="submit" id="submit" value="Submit Registration Form">
