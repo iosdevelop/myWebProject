@@ -7,7 +7,9 @@
   display: none;
 }
 
-
+.soldOut{
+  text-decoration: line-through;
+}
 .google-calendar{
 	display: block;
 	margin-bottom: 46px;

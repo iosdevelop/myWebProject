@@ -10,12 +10,12 @@
 			    $emailAddress = mysqli_real_escape_string($conn, $_POST['emailAddress']);
 			    $eventId =mysqli_real_escape_string($conn, $_GET['eventId']);
 			    $registrationNumber = mysqli_real_escape_string($conn, $_POST['registrationNumber']);
+
 			    //SQL query to insert values into database
 	        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', $eventId,$registrationNumber)";
 	        
-	        //display success message
-	        // echo "<font color='green'>Data added successfully.";
-	        // echo "<br/><a href='index.php'>View Result</a>";
+	       
+	        
 	        if ($conn->query($result) === TRUE) {
 	            //echo '<h3 class="header">New record created successfully</h3>';
 	        }

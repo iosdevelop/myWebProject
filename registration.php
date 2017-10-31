@@ -26,18 +26,34 @@
 
 													//Here I am pulling all events from the events table
 													//I find this is safer to have user select valid concert dates.
-														
-													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events");												 
+													$soldOut = $conn->query("SELECT eventID, count(*) FROM `users` GROUP BY eventID HAVING count(*) >= 50000");
+													//test
+													$eventCount = "SELECT eventid, count(*) FROM woodstock.users GROUP BY eventID HAVING count(*) = 5";
+													$eventSold = mysqli_query($conn, $eventCount);
+													$soldEventOut = mysqli_fetch_array($eventSold, MYSQLI_ASSOC);
+
+
+													$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events WHERE date >= NOW()");												 
 													if($dateChecklist->num_rows){
 														$select= '<select name="eventId">';
 														while($event=$dateChecklist->fetch_array()){
 															//Checking if user selected date from details page and auto selecting
 															//inside list
+															//if ($event['id']===$sold['id'])
+															//{ 
+															//	$select.='<option value="'.$event['id'].'" disabled>'.$event['date'].'&nbsp;&nbsp;'.$event['location']. sold out'</option>';
+															//}
 															if($event['id']===$_GET['eventID']){
 																$select.='<option value="'.$event['id'].'" selected>'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
-															}else{
+															}
+															else{
 																//Display all events from database
-																$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
+																if ($event['id']==$soldEventOut['eventid']){
+																	$select.='<option value="'.$event['id'].'" disabled>'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'&nbsp;SOLD OUT</option>';
+																}else{
+																	$select.='<option value="'.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</option>';
+																}
+																
 															}
 														}
 													}

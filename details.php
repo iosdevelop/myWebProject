@@ -1,5 +1,18 @@
 <?php include_once "header.php";
 			include_once "config.php";
+
+			$eventCount = "SELECT eventid, count(*) FROM woodstock.users GROUP BY eventID HAVING count(*) = 5";
+			$eventSold = mysqli_query($conn, $eventCount);
+			$soldEventOut = mysqli_fetch_array($eventSold, MYSQLI_ASSOC);
+
+
+			// if($eventCount->num_rows){
+			// 	while($soldOut=$eventCount->fetch_array()){
+			// 		$select.='<li>'.$soldOut['eventid'].'SOLDOUT</li>';
+			// 	}
+			// }
+			// echo $select.'SoldOut';
+			//cho '<pre>'.var_dump($soldEventOut);
 ?>
 <article class="post">
 	<header>
@@ -25,14 +38,17 @@
 			//Here I am pulling all events from the events table
 			//I find this is safer to have user select valid concert date.
 			echo '<h2>Event Dates</h2>';
-			$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events");												 
+			$dateChecklist = $conn->query("SELECT woodstock.events.id, woodstock.events.location, DATE_FORMAT(woodstock.events.date,'%b %e, %Y')date FROM woodstock.events WHERE date >= NOW()");												 
 			if($dateChecklist->num_rows){
-				//$select= '<select name="eventId">';
 				while($event=$dateChecklist->fetch_array()){
-					$select.='<li><a href="registration.php?eventID='.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</a></li>';
+					if ($event['id']==$soldEventOut['eventid']){
+						$select.='<li class="soldOut">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].$soldOut['count(*)'].'&nbsp;SOLD OUT</li>';
+					}else{
+						$select.='<li><a href="registration.php?eventID='.$event['id'].'">'.$event['date'].'&nbsp;&nbsp;'.$event['location'].'</a></li>';
+					}
+					
 				}
 			}
-		//$select.='</select>';
 		echo '<ol>'.$select.'</ol>'; 
 			?>
 				
