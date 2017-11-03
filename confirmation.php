@@ -10,7 +10,7 @@
 			$selectValue =  mysqli_query($conn, $selectValueQuery );
 			$selectionCurrent = mysqli_fetch_array($selectValue, MYSQLI_ASSOC);
 ?>
-<!-- Display user's selected value for final confirmation before submission to database. -->
+
 <article class="post">
 	<header>
 		<div class="title">
@@ -24,7 +24,7 @@
 		</div>
 		<div class="pure-control-group">
 			<label>First Name: </label>
-			<input type="text" name="firstName" pattern="[A-Za-z]+" id="firstName" value = "<?php echo $_POST['firstName'];?>" required>
+			<input type="text" name="firstName" pattern="[A-Za-z]+" id="firstName" value = "<?php echo $_POST['firstName'];?>" required><span class="error"><?php echo '&nbsp;'.$nameERR;?></span>
 		</div>
 		<div class="pure-control-group">
 			<label>Last Name:</label>
