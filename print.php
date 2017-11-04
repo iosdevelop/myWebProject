@@ -1,5 +1,18 @@
 <?php include_once "header.php";
 			include_once "config.php";
+			/**
+			 * This function prints the error message associated with webform
+			 *
+			 * @param      <string>  $bug    Text of error message
+			 */
+			function notworking($bug) {
+			    // your error code can go here
+			    echo "<script>alert('Please correct errors with webform. ";
+			    echo "Here are the errors below.";
+			    echo $bug;
+			    echo "');location.href = 'registration.php'</script>";
+			    //die();
+			}
 			
 			//Here I am seeing if the user hits the submit button
 			//Then I am saving all the post data to variables being sure to escape string.
@@ -11,6 +24,46 @@
 			    $eventId =mysqli_real_escape_string($conn, $_GET['eventId']);
 			    $registrationNumber = mysqli_real_escape_string($conn, $_POST['registrationNumber']);
 
+
+
+			    // validation expected data exists
+			     if(!isset($_POST['firstName']) ||
+			         !isset($_POST['lastName']) ||
+			         !isset($_POST['emailAddress']) ||
+			         !isset($_POST['phoneNumber']));      
+			     
+
+			     // $firstName = $_POST['firstName']; // required
+			     // $lastName = $_POST['lastName']; // required
+			     // $emailAddress = $_POST['emailAddress']; // required
+			     // $phoneNumber = $_POST['phoneNumber']; // required
+			     // //$registrationNumber = mysqli_real_escape_string($conn, $_POST['registrationNumber']);
+
+			     $bug_message = "";
+			     $string_exp = "/^[A-Za-z.'-]+$/";
+
+			       if(!preg_match($string_exp,$firstName)) {
+			         $bug_message .= '\n * The first name you entered does not appear to be valid.';
+			       }
+			       if(!preg_match($string_exp,$lastName)) {
+			         $bug_message .= '\n * The last name you entered does not appear to be valid.';
+			       }  
+			         $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+			       if(!preg_match($email_exp,$emailAddress)) {
+			         $bug_message .= '\n * The email Address you entered does not appear to be valid.';
+			       }
+			       $phone_exp = "/^\d{3}[ -]?\d{3}[ -]?\d{4}$/";
+			       if(!preg_match($phone_exp, $phoneNumber)){
+			         $bug_message .= '\n * The phone number you enter does not appear valid.';
+			         
+			       }
+			       
+			       if(strlen($bug_message) > 0) {
+			         notworking($bug_message);
+			         Header("Location: registration.php");
+			       }
+
+			    
 			    //SQL query to insert values into database
 	        $result = "INSERT INTO woodstock.users(firstName, lastName, emailAddress, phoneNumber, eventId, registrationNumber) VALUES('$firstName','$lastName', '$emailAddress', '$phoneNumber', $eventId,$registrationNumber)";
 	        

@@ -1,5 +1,6 @@
 <?php include_once "header.php";
-			include_once "config.php";?>
+			include_once "config.php";
+			?>
 
 
 						<!-- Post -->
@@ -14,11 +15,11 @@
 									<fieldset>
 										<div class="pure-control-group">
 											<label for="firstName">First Name: </label><span class="error"></span>
-											<input type="text" name="firstName" id="firstName" pattern="[A-Za-z]+" placeholder="First Name" maxlength="30" required>
+											<input type="text" name="firstName" id="firstName" value="<?php echo $_POST['firstName'];?>" pattern="[A-Za-z]+" placeholder="First Name" maxlength="30" required>
 										</div>
 										<div class="pure-control-group">
 											<label>Last Name: </label>
-											<input type="text" name="lastName" pattern="[A-Za-z]+" placeholder="Last Name" maxlength="30" required="">
+											<input type="text" name="lastName" value="<?php echo $_POST['lastName'];?>" pattern="[A-Za-z]+" placeholder="Last Name" maxlength="30" required="">
 										</div>
 										<div class="pure-control-group" required>
 											<label>Event Date: </label>
@@ -56,11 +57,11 @@
 											
 										<div class="pure-control-group">
 											<label>Email Address:</label>
-											<input type="email" name="emailAddress" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" maxlength="40" required="">
+											<input type="email" name="emailAddress" value="<?php echo $_POST['emailAddress'];?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email Address" maxlength="40" required="">
 										</div>
 										<div class="pure-control-group">
 											<label>Phone Number:</label>
-											<input type="tel" name="phoneNumber" value="" pattern="^\d{10}$" placeholdertitle="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
+											<input type="tel" name="phoneNumber" value="<?php echo $_POST['phoneNumber'];?>" pattern="^\d{10}$" placeholdertitle="Telephone Number - 10 numeric characters only - no dash" maxlength="10" required="">
 										</div>
 										<br>
 										<input type="submit" id="submit" name="confirmation" value="Next">
