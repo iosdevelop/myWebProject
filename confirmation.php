@@ -17,7 +17,7 @@
 			<h2><a aria-label="The home page link" href="index.php">Confirmation</a></h2>
 		</div>
 	</header>
-	<form class="pure-form" action="print.php?eventId=<?php echo $selectOption?>" method="post" enctype="multipart/form-data" accept-charset="utf-8" name="confirmationForm">
+	<form class="pure-form" action="print.php?eventId=<?php echo $selectOption?>" method="post" enctype="multipart/form-data" accept-charset="utf-8" name="registrationForm">
 		<div class="pure-control-group">
 			<label>Registration Number: </label>
 			<input type="text" name="registrationNumber" value="<?php echo $registrationNumber;?>" readonly>
